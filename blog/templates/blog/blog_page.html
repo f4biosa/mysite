@@ -10,13 +10,7 @@
 
     <div class="intro">{{ page.intro }}</div>
 
-    {% for post in blogpages %}
-        {% with post=post.specific %}
-            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-            <p>{{ post.intro }}</p>
-            {{ post.body|richtext }}
-        {% endwith %}
-    {% endfor %}
+    {{ page.body|richtext }}
 
     <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
 
